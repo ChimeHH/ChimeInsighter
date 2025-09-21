@@ -1,0 +1,10 @@
+---
+- ignore-filenames:
+  - skip.java
+
+  ignore-paths:
+  - __MACOSX
+  - skip_dir
+
+  ignore-rules:
+  - xxxxxx

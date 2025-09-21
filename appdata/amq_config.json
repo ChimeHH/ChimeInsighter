@@ -1,0 +1,724 @@
+{   
+    "config_version": 3.0,
+    
+    "mq": {
+        "host": "rabbitmq",
+        "port": 15672,
+        "username": "chime",
+        "password": "09b909e7cd6a8cd8327368a9df348a82",
+        "vhost": "chime.vhost0",
+        "exchange": "chime.exchange0"
+    },
+
+    "overload": {
+        "memory_used_threshold": 95, 
+        "swap_used_threshold": 90, 
+        "cpu_used_threshold": 95
+    },
+    
+    "filesystem": {
+        "nfs_root": "/share/nfs-data",
+        "temp_root": "/share/tmp",
+        "reports_root": "/share/reports"
+    },
+
+    
+    "scores_weight": {
+        "cvss": 0.5,
+        "exploit": 0.25,
+        "impact": 0.25
+    },
+
+    "report": {
+        "xlsx": {
+            "default": 4096,
+            "file": 4096,
+            "infoleak": {
+                "default": 4096,
+                "path": 1024,
+                "domain": 1024
+            },
+            "malware": 32
+        },
+        "pdf": {
+            "default": 128,
+            "file": 128,
+            "infoleak": 128,  
+            "malware": 32
+        }
+    },
+    "zeroday_risks": {
+        "copy_to_static": ["CWE-121"],
+        "deadlock": ["CWE-833"],
+        "double_free": ["CWE-415"],
+        "forbidden_function": ["CWE-676"],
+
+        "free_non_heap": ["CWE-590"],
+        "infinite_loop": ["CWE-835"],
+        "input_analysis": ["CWE-20"],
+        "invalid_argument": ["CWE-687", "CWE-688", "CWE-689"],
+        
+        "invalid_buffer": ["CWE-119", "CWE-120", "CWE-121", "CWE-122"],
+        "invalid_string": ["CWE-170"],
+        "null_dereference": ["CWE-476"],
+        "random_access": ["CWE-338"],
+        
+        "return_of_stack": ["CWE-416"],
+        "scan_format": ["CWE-134", "CWE-135"],
+        "signed_unsigned": ["CWE-195", "CWE-196", "CWE-197"],
+        "unsigned_overflow": ["CWE-190"],
+        
+        "toc_tou": ["CWE-367"],
+        "unchecked_return_value": ["CWE-252", "CWE-253"],
+        "use_after_free": ["CWE-416"],
+        "wrong_size_memset": ["CWE-131"]
+    },
+
+     "sscan_risks": {
+        "USELESS_STRING": null,
+        "DCN": null,
+        "DMI": 440,
+        "CN": 580,
+        "DLS": 563,
+        "RV": 440,
+        "IS": 366,
+        "NP": 476,
+        "RCN": 476,
+        "EQ": 595,
+        "ES": 597,
+        "FI": 586,
+        "AM": 227,
+        "J2EE": 4,
+        "RE": 185,
+        "MS": 493,
+        "DE": 391,
+        "XSS": 79,
+        "HRS": 113,
+        "STCAL": 366,
+        "ICAST": 192,
+        "FB": null,
+        "CT": null,
+        "AT": null,
+        "JUA": null,
+        "ASE": null,
+        "VSC": null,
+        "DA": null
+    },
+
+    "severity": {
+        "zeroday": {
+            "default": "medium",
+
+            "copy_to_static" : "high",
+            "deadlock" : "high",
+            "double_free" : "high",
+            "forbidden_function" : "medium",
+
+            "free_non_heap": "high",
+            "infinite_loop": "high",
+            "input_analysis": "high",
+            "invalid_argument": "high",
+            
+            "invalid_buffer": "high",
+            "invalid_string": "high",
+            "null_dereference": "medium",
+            "random_access": "high",
+            
+            "return_of_stack": "high",
+            "scan_format": "high",
+            "signed_unsigned": "high",
+            "unsigned_overflow": "high",
+            
+            "toc_tou": "high",
+            "unchecked_return_value": "low",
+            "use_after_free": "high",
+            "wrong_size_memset": "high",
+            "general_info": "low"
+        },
+
+        "infoleak": {
+            "default": "advice",
+
+            "base_64": "advice",
+            "cid": "low",
+            "crypto": "advice",
+            "domain": "advice",
+            "email": "low",
+            "gps": "low",
+            "ip": "low",
+            "path": "low",
+            "phone": "low",
+            "ssl": "low",
+            "url": "low"
+        },
+
+        "password": {
+            "default": "medium"
+        },
+
+        "misconfiguration": {
+            "default": "medium"
+        },
+
+        "malware": {
+            "default": "medium"
+        },
+
+        "security": {
+            "hardening": "advice",
+            "general_info": "advice",
+            "functions": "advice",
+            "varnames": "advice",
+            "external functions": "advice",
+            "external varnames": "advice",
+            "linked libs": "advice"
+        },
+
+        "compliance": {
+            "default": "low"
+        }
+    },
+
+    "queues": {
+        //sast is in charge of schedule, aggregate, ..."
+        "sast": [
+            {"queue": "sast.highpri", "routekey": "sast.highpri" },
+            {"queue": "sast.middlepri", "routekey": "sast.middlepri" },
+            {"queue": "sast.lowpri", "routekey": "sast.lowpri" }
+        ],
+
+        "bast":[
+            {"queue": "bast.highpri", "routekey": "bast.highpri" },
+            {"queue": "bast.middlepri", "routekey": "bast.middlepri" },
+            {"queue": "bast.lowpri", "routekey": "bast.lowpri" }
+        ],
+
+        "mast":[
+            {"queue": "mast.highpri", "routekey": "mast.highpri" },
+            {"queue": "mast.middlepri", "routekey": "mast.middlepri" },
+            {"queue": "mast.lowpri", "routekey": "mast.lowpri" }
+        ],
+
+        "iast":[
+            {"queue": "iast.highpri", "routekey": "iast.highpri" },
+            {"queue": "iast.middlepri", "routekey": "iast.middlepri" },
+            {"queue": "iast.lowpri", "routekey": "iast.lowpri" }
+        ]
+    },
+
+    // engines: name of extra actions must start with _; all data generated by pipeline will be write to database directly
+    // args of pipleline generated by _preexec: component_id, version_id, root_path, [filepath]
+    "engines": {           
+        "_preexec": {},
+        "_postexec": {}, 
+
+        "bast": {
+            "_max_workers": 3,
+
+            "bast": [
+                {
+                    "max_files": 0,
+                    "event": "ui/scan",
+                    "response": "job/files",
+
+                    "rules": [
+                        {"module": "services.bast._cli", "command": "prescan"},
+                        {"module": "services.bast._cli", "command": "scan", "kwargs": {"jobs": "max(1, min($cpu, $memory_total/8))", "job_wait": 900, "debug": 20}},
+                        {"module": "services.bast._cli", "command": "parse", "kwargs": {"jobs": "max(1, min($cpu, $memory_total/8))"}},
+                        {"module": "services.bast._cli", "command": "files", "kwargs": {"jobs": "max(1, min($cpu, $memory_total/8))"}},
+                        {"module": "services.bast._cli", "command": "archives", "kwargs": {"jobs": "max(1, min($cpu, $memory_total/8))"}},
+                        {"module": "services.bast._cli", "command": "aggregate"},
+                        {"module": "services.bast._cli", "command": "p2j"}
+                    ]
+                }
+            ]
+        },
+
+        
+        // label mcode indicates an unpacked or extracted packages, contains source code like java, swift, objective-c, xml, kotlin, dot-1, etc
+        "mast":  {
+            "_max_workers": "$cpu",
+
+            "mobile": [
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 300,
+                    "event": "job/files",
+                    "response": "job/mobile",
+                    "labels": ["mcode", "apk"],                    
+                    "rules": [
+                        {"module": "services.mast._cli", "command": "qscan"}
+                    ]
+                },
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 300,
+                    "event": "job/files",
+                    "response": "job/mobile",
+                    "labels": ["mcode"],                    
+                    "rules": [
+                        {"module": "services.mast._cli", "command": "mscan"}
+                    ]
+                },
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 300,
+                    "event": "job/files",
+                    "response": "job/mobile",
+                    "labels": ["mcode", "jar", "apk"],
+                    "rules": [
+                        {"module": "services.mast._cli", "command": "sscan"}
+                    ]
+                },                
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 300,
+                    "event": "job/files",
+                    "response": "job/mobile",
+                    "labels": ["jar", "apk", "ipa", "appx", "zip"],
+                    "rules": [
+                        {"module": "services.mast._cli", "command": "fscan"}
+                    ]
+                }
+            ]
+        },
+
+        "iast":  {
+            "_max_workers": "max(1, min($cpu, $memory_total/8))",
+
+            "public": [
+                {                    
+                    "max_files": 0,
+                    "event": "job/files",
+                    "response": "job/public",
+                    "required": ["labels", "components"],
+                    "rules": [
+                        {"module": "services.iast.cve._cli", "command": "scan"}
+                    ]
+                }
+            ],
+            
+            "zeroday": [
+                {
+                    "index": 0,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["copy_to_static"]}}
+                    ]
+                },
+                {
+                    "index": 1,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["deadlock"]}}
+                    ]
+                },
+                {
+                    "index": 2,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["double_free"]}}
+                    ]
+                },
+                {
+                    "index": 3,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["forbidden_function"]}}
+                    ]
+                },
+
+                {
+                    "index": 4,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["free_non_heap"]}}
+                    ]
+                },
+                {
+                    "index": 5,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["general_info"]}}
+                    ]
+                },
+                {
+                    "index": 6,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["infinite_loop"]}}
+                    ]
+                },
+                {
+                    "index": 7,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["input_analysis"]}}
+                    ]
+                },
+                {
+                    "index": 8,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["invalid_argument"]}}
+                    ]
+                },
+                {
+                    "index": 9,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["invalid_buffer"]}}
+                    ]
+                },
+                {
+                    "index": 10,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["invalid_string"]}}
+                    ]
+                },
+                {
+                    "index": 11,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["null_dereference"]}}
+                    ]
+                },
+                {
+                    "index": 12,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["random_access"]}}
+                    ]
+                },
+                {
+                    "index": 13,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["return_of_stack"]}}
+                    ]
+                },
+                {
+                    "index": 14,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["scan_format"]}}
+                    ]
+                },
+                {
+                    "index": 15,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["signed_unsigned"]}}
+                    ]
+                },
+                {
+                    "index": 16,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["toc_tou"]}}
+                    ]
+                },
+                {
+                    "index": 17,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["unchecked_return_value"]}}
+                    ]
+                },
+                {
+                    "index": 18,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["unsigned_overflow"]}}
+                    ]
+                },
+                {
+                    "index": 19,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["use_after_free"]}}
+                    ]
+                },
+                {
+                    "index": 20,
+                    "max_kbytes": 512,
+                    "max_files": 256,
+                    "timeout_per_mb": 600,
+                    "max_memory_gb": 25,
+                    "raw_binary_gain": 3,
+                    "event": "job/files",
+                    "response": "job/zeroday",
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                
+                    "rules": [
+                        {"module": "services.iast.zeroday._cli", "command": "scan", "kwargs": {"routines": ["wrong_size_memset"]}}
+                    ]
+                }
+            ],
+
+            "malware": [
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 60,
+                    "event": "job/files",
+                    "response": "job/malwares",  
+                    "required": ["subfiles"],                    
+                    "rules": [
+                        {"module": "services.iast.malwares._cli", "command": "scan"}
+                    ]
+                }
+            ],
+
+            "infoleak": [
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 60,
+                    "event": "job/files",
+                    "response": "job/infoleaks",
+                    "required": ["subfiles"],
+                    "rules": [
+                        {"module": "services.iast.infoleaks._cli", "command": "scan"}
+                    ]
+                }
+            ],
+
+            "misconfiguration": [
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 60,
+                    "event": "job/files",                
+                    "response": "job/misconfiguration",
+                    "pathregex": "/(etc|run|usr((/local)?/lib)?)/sysctl\\.d",
+                    "rules": [
+                        {"module": "services.iast.misconfiguration._cli", "command": "linux_kernel"}
+                    ]
+                },
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 60,
+                    "event": "job/files",                
+                    "response": "job/misconfiguration",
+                    "pathregex": "/etc/(pam\\.d|login\\.defs|security)/",
+                    "rules": [
+                        {"module": "services.iast.misconfiguration._cli", "command": "linux_password"}
+                    ]
+                },
+                {
+                    "max_files": 0,
+                    "event": "job/files",                
+                    "response": "job/misconfiguration",
+                    "pathregex": "/etc/sshd?_config($|\\.d/)?",
+                    "rules": [
+                        {"module": "services.iast.misconfiguration._cli", "command": "ssh"}
+                    ]
+                },
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 60,
+                    "event": "job/files",                
+                    "response": "job/misconfiguration",
+                    "pathregex": "/etc/(apache2?(/httpd)?|httpd)(conf/)?",
+                    "rules": [
+                        {"module": "services.iast.misconfiguration._cli", "command": "web_server"}
+                    ]
+                },
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 60,
+                    "event": "job/files",                
+                    "response": "job/misconfiguration",
+                    "pathregex": "/system32/config/",
+                    "rules": [
+                        {"module": "services.iast.misconfiguration._cli", "command": "win_registry"}
+                    ]
+                }
+            ],
+
+            "password": [
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 60,
+                    "event": "job/files",
+                    "response": "job/password",
+                    "//required": ["-unpacked_relative_files", "-extracted_files"],                    
+                    "filetype": ["shared", "executable", "relocatable", "octet-stream"],
+                    "rules": [
+                        {"module": "services.iast.password._cli", "command": "scan"}
+                    ]
+                },
+
+                {
+                    "max_files": 0,
+                    "timeout_per_mb": 60,
+                    "event": "job/files",
+                    "response": "job/password",
+                    "required": ["unpacked_relative_files"],
+                    "rules": [
+                        {"module": "services.iast.credentials._cli", "command": "scan"}
+                    ]
+                }
+            ]
+        }
+    }
+}

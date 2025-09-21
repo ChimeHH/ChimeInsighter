@@ -1,0 +1,2012 @@
+{
+    "AUTOSAR": [
+        {
+            "name": "A18-5-1",
+            "functions": ["malloc", "realloc", "calloc", "free"],
+            "state": "Required",
+            "description": "Functions malloc, calloc, realloc shall not be used",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M17-0-5",
+            "functions": ["setjmp", "longjmp"],
+            "state": "Required",
+            "description": "The standard header file <setjmp.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "A18-0-2",
+            "functions": ["atoi", "atol", "atof", "atoll"],
+            "state": "Required",
+            "description": "The atof, atoi, atol and atoll functions of <stdlib.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M18-0-3",
+            "functions": ["exit", "abort", "_Exit", "quick_exit", "getenv", "system", "setlocale"],
+            "state": "Required",
+            "description": "The library functions abort, exit, getenv and system of <stdlib.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M18-0-4",
+            "functions": ["clock", "difftime", "mktime", "time", "asctime", "ctime", "gmtime", "localtime", "strftime", "wcsftime"],
+            "state": "Required",
+            "description": "The time handling functions of library <ctime> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M18-0-5",
+            "functions": ["strcpy", "strcmp", "strcat", "strchr", "strspn", "strcspn", "strpbrk", "strrchr", "strstr", "strtok", "strlen"],
+            "state": "Required",
+            "description": "The unbounded functions of library <cstring> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M27-0-1",
+            "functions": ["ctermid", "cuserid", "fdopen", "fgets", "fopen", "freopen", "gets", "popen", "tempnam", "tmpfile", "tmpnam", "clearerr", "fclose", "feof", "ferror", "fflush", "fgetc", "fgetpos", "fileno", "flockfile", "fprintf", "fputc", "fputs", "fread", "fscanf", "fseek", "fseeko", "fsetpos", "ftell", "ftrylockfile", "funlockfile", "fwrite", "getc", "getc_unlocked", "getchar", "getchar_unlocked", "getopt", "getw", "intftell", "pclose", "perror", "printf", "putc", "putc_unlocked", "putchar", "putchar_unlocked", "puts", "putw", "remove", "rename", "rewind", "scanf", "setbuf", "setvbuf", "snprintf", "sprintf", "sscanf", "ungetc", "vfprintf", "vprintf", "vsnprintf", "vsprintf", "fwprintf", "fwscanf", "swprintf", "swscanf", "vfwprintf", "vfwscanf", "vswprintf", "vswscanf", "vwprintf", "vwscanf", "wprintf", "wscanf", "fgetwc", "fgetws", "fputwc", "fputws", "fwide", "getwc", "getwchar", "putwc", "putwchar", "ungetwc"],
+            "state": "Required",
+            "description": "The stream input/output library <cstdio> shall not be used.",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "A26-5-1",
+            "functions": ["rand"],
+            "state": "Required",
+            "description": "Pseudorandom numbers shall not be generated using std::rand().",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M18-7-1",
+            "functions": ["signal"],
+            "state": "Required",
+            "description": "The signal handling facilities of <csignal> shall not be used.",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "A18-0-3",
+            "state": "Required",
+            "description": "The library <clocale> (locale.h) and the setlocale function shall not be used.",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M18-0-6",
+            "functions": ["sin", "cos", "tan", "sqrt", "pow"],
+            "state": "Required",
+            "description": "The mathematical functions of library <math.h> shall not be used.",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M18-0-7",
+            "functions": ["isalpha", "isdigit", "islower", "isupper", "tolower", "toupper"],
+            "state": "Required",
+            "description": "The character handling functions of library <ctype.h> shall not be used.",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        },
+        {
+            "name": "M18-0-8",
+            "functions": ["getenv", "setenv", "unsetenv"],
+            "state": "Required",
+            "description": "The environment handling functions of library <stdlib.h> shall not be used.",
+            "languages": ["C", "C++"],
+            "source": "AUTOSAR C++14 Guidelines"
+        }
+    ],
+
+    "CERT-C": [
+        {
+            "name": "ENV33-C",
+            "functions": ["system"],
+            "state": "High (L1)",
+            "description": "Do not call system",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "MSC30-C",
+            "functions": ["rand"],
+            "state": "Medium (L2)",
+            "description": "Do not use the rand() function for generating pseudorandom numbers",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "STR31-C",
+            "state": "High (L1)",
+            "description": "Guarantee that storage for strings has sufficient space for character data and the null terminator",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "EXP33-C",
+            "state": "High (L1)",
+            "description": "Do not read uninitialized memory",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "EXP34-C",
+            "state": "High (L1)",
+            "description": "Do not dereference null pointers",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "MEM30-C",
+            "state": "High (L1)",
+            "description": "Do not access freed memory",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "MEM34-C",
+            "state": "High (L1)",
+            "description": "Only free memory allocated dynamically",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "MSC22-C",
+            "functions": ["setjmp", "longjmp"],
+            "state": "High (L1)",
+            "description": "Use the setjmp, longjmp facility securely",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "FIO30-C",
+            "functions": ["fopen"],
+            "state": "High (L1)",
+            "description": "Ensure files are properly closed when they are no longer needed",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "INT31-C",
+            "functions": ["atoi", "atol", "atoll"],
+            "state": "High (L1)",
+            "description": "Ensure that integer conversions do not result in lost or misinterpreted data",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "ARR30-C",
+            "state": "High (L1)",
+            "description": "Do not form or use out-of-bounds pointers or array subscripts",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "SIG30-C",
+            "functions": ["signal"],
+            "state": "High (L1)",
+            "description": "Call only asynchronous-safe functions within signal handlers",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        },
+        {
+            "name": "POS30-C",
+            "functions": ["printf", "sprintf"],
+            "state": "High (L1)",
+            "description": "Ensure that format strings are not dynamically generated",
+            "languages": ["C"],
+            "source": "CERT C Coding Standard"
+        }
+    ],
+
+    "ESCR-IPA": [
+        {
+            "name": "R1.1.1",
+            "state": "High (L1)",
+            "description": "Use areas after initializing them Automatic variables shall be initialized at the time of declaration, or the initial values shall be assigned just before using them",
+            "languages": ["C", "C++"],
+            "source": "ESCR-IPA Guidelines"
+        },
+        {
+            "name": "R1.1.2",
+            "state": "High (L1)",
+            "description": "Arrays with specified number of elements shall be initialized with values that match the number of the elements",
+            "languages": ["C", "C++"],
+            "source": "ESCR-IPA Guidelines"
+        },
+        {
+            "name": "R3.1.4",
+            "state": "High (L1)",
+            "description": "Functions shall not call themselves, either directly or indirectly",
+            "languages": ["C", "C++"],
+            "source": "ESCR-IPA Guidelines"
+        }
+    ],
+
+    "MISRA-2012": [
+        {
+            "name": "9.1",
+            "state": "Mandatory",
+            "description": "The value of an object with automatic storage duration shall not be read before it has been set",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "17.2",
+            "state": "Required",
+            "description": "Functions shall not call themselves, either directly or indirectly",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.3",
+            "functions": ["malloc", "realloc", "calloc", "free", "aligned_alloc"],
+            "state": "Required",
+            "description": "The memory allocation and deallocation functions of <stdlib.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.4",
+            "functions": ["setjmp", "longjmp"],
+            "state": "Required",
+            "description": "The standard header file <setjmp.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.6",
+            "functions": ["ctermid", "cuserid", "fdopen", "fgets", "fopen", "freopen", "gets", "popen", "tempnam", "tmpfile", "tmpnam", "clearerr", "fclose", "feof", "ferror", "fflush", "fgetc", "fgetpos", "fileno", "flockfile", "fprintf", "fputc", "fputs", "fread", "fscanf", "fseek", "fseeko", "fsetpos", "ftell", "ftrylockfile", "funlockfile", "fwrite", "getc", "getc_unlocked", "getchar", "getchar_unlocked", "getopt", "getw", "intftell", "pclose", "perror", "printf", "putc", "putc_unlocked", "putchar", "putchar_unlocked", "puts", "putw", "remove", "rename", "rewind", "scanf", "setbuf", "setvbuf", "snprintf", "sprintf", "sscanf", "ungetc", "vfprintf", "vprintf", "vsnprintf", "vsprintf", "fwprintf", "fwscanf", "swprintf", "swscanf", "vfwprintf", "vfwscanf", "vswprintf", "vswscanf", "vwprintf", "vwscanf", "wprintf", "wscanf", "fgetwc", "fgetws", "fputwc", "fputws", "fwide", "getwc", "getwchar", "putwc", "putwchar", "ungetwc"],
+            "state": "Required",
+            "description": "The standard library input/output functions of <stdio.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.7",
+            "functions": ["atoi", "atol", "atof", "atoll"],
+            "state": "Required",
+            "description": "The Standard Library functions atof, atoi, atol and atoll of <stdlib.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.8",
+            "functions": ["exit", "abort", "_Exit", "quick_exit", "getenv", "system"],
+            "state": "Required",
+            "description": "The Standard Library termination functions of <stdlib.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.9",
+            "functions": ["bsearch", "qsort"],
+            "state": "Required",
+            "description": "The Standard Library functions bsearch and qsort of <stdlib.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.10",
+            "functions": ["clock", "difftime", "mktime", "time", "asctime", "ctime", "gmtime", "localtime", "strftime", "wcsftime"],
+            "state": "Required",
+            "description": "The standard library <time.h> shall not be used",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.17",
+            "state": "Mandatory",
+            "description": "Use of the string handling functions from <string.h> shall not result in accesses beyond the bounds of the objects referenced by their pointer parameters",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "21.18",
+            "state": "Mandatory",
+            "description": "The size_t argument passed to any function in <string.h> shall have an appropriate value",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        },
+        {
+            "name": "22.2",
+            "state": "Mandatory",
+            "description": "A block of memory shall only be freed if it was allocated by means of a Standard Library function",
+            "languages": ["C", "C++"],
+            "source": "MISRA C:2012 Guidelines"
+        }
+    ],
+
+    "Deprecated": [
+        {
+            "functions": ["strcpy", "wcscpy", "stpcpy", "wcpcpy", "scanf", "vscanf", "fwscanf", "swscanf", "wscanf", "gets", "puts", "strcat", "wcscat", "wcrtomb", "wctob", "sprintf", "vsprintf", "vfprintf", "asprintf", "vasprintf", "strncpy", "wcsncpy", "strtok", "wcstok", "strdupa", "strndupa", "longjmp", "siglongjmp", "setjmp", "sigsetjmp", "alloca", "mallopt", "remove", "mktemp", "tmpnam", "tempnam", "getwd", "getlogin", "getpass", "cuserid", "rexec", "rexec_af"],
+            "description": "Unsafe C/C++",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["gets_s", "fgets_s", "sprintf_s", "vsprintf_s", "strcpy_s", "strcat_s"],
+            "description": "Deprecated or unsafe versions of functions with secure alternatives",
+            "source": "Microsoft Secure Coding Guidelines",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["inet_addr", "inet_ntoa"],
+            "description": "Deprecated IPv4 address manipulation functions",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["dlopen", "dlsym", "dlclose", "dlerror"],
+            "description": "Deprecated dynamic linking functions",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["gethostbyname", "gethostbyaddr"],
+            "description": "Deprecated DNS lookup functions",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["rand", "srand"],
+            "description": "Deprecated random number generation functions",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["ctime", "localtime", "gmtime", "asctime"],
+            "description": "Deprecated time conversion functions",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["mkstemp", "tempnam", "tmpnam"],
+            "description": "Deprecated temporary file functions",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["scanf_s", "sscanf_s", "fscanf_s"],
+            "description": "Deprecated secure versions of scanf functions",
+            "source": "Microsoft Secure Coding Guidelines",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["strtok_r", "strtok_s"],
+            "description": "Deprecated reentrant versions of strtok",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["getpwuid", "getpwnam"],
+            "description": "Deprecated password database functions",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["getgrgid", "getgrnam"],
+            "description": "Deprecated group database functions",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["crypt"],
+            "description": "Deprecated cryptography functions",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["ftime"],
+            "description": "Deprecated time functions",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["asctime_r", "ctime_r"],
+            "description": "Deprecated reentrant versions of asctime and ctime",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["getenv_r"],
+            "description": "Deprecated reentrant version of getenv",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["readdir_r"],
+            "description": "Deprecated reentrant version of readdir",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["strerror_r"],
+            "description": "Deprecated reentrant version of strerror",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["gmtime_r", "localtime_r"],
+            "description": "Deprecated reentrant versions of gmtime and localtime",
+            "source": "POSIX",
+            "languages": ["C", "C++"]
+        }
+    ],
+
+    
+    "Dangerous": [
+        {
+            "functions": ["EVP_des_ecb", "EVP_des_cbc", "EVP_des_cfb", "EVP_des_ofb", "EVP_desx_cbc"],
+            "description": "DES only supports a 56-bit keysize, which is too small given today's computers (CWE-327)",
+            "suggestion": "Use a different patent-free encryption algorithm with a larger keysize, such as 3DES or AES",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["EVP_rc4_40", "EVP_rc2_40_cbc", "EVP_rc2_64_cbc"],
+            "description": "These keysizes are too small given today's computers (CWE-327)",
+            "suggestion": "Use a different patent-free encryption algorithm with a larger keysize, such as 3DES or AES",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["getlogin"],
+            "description": "It's often easy to fool getlogin. Sometimes it does not work at all, because some program messed up the utmp file. Often, it gives only the first 8 characters of the login name. The user currently logged in on the controlling tty of our program need not be the user who started it. Avoid getlogin() for security-related purposes (CWE-807)",
+            "suggestion": "Use getpwuid(geteuid()) and extract the desired information instead",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["cuserid"],
+            "description": "Exactly what cuserid() does is poorly defined (e.g., some systems use the effective uid, like Linux, while others like System V use the real uid). Thus, you can't trust what it does. It's certainly not portable (The cuserid function was included in the 1988 version of POSIX, but removed from the 1990 version). Also, if passed a non-null parameter, there's a risk of a buffer overflow if the passed-in buffer is not at least L_cuserid characters long (CWE-120)",
+            "suggestion": "Use getpwuid(geteuid()) and extract the desired information instead",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["getpw"],
+            "description": "This function is dangerous; it may overflow the provided buffer. It extracts data from a 'protected' area, but most systems have many commands to let users modify the protected area, and it's not always clear what their limits are. Best to avoid using this function altogether (CWE-676, CWE-120)",
+            "suggestion": "Use getpwuid() instead",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        },
+        {
+            "functions": ["getpass"],
+            "description": "This function is obsolete and not portable. It was in SUSv2 but removed by POSIX.2. What it does exactly varies considerably between systems, particularly in where its prompt is displayed and where it gets its data (e.g., /dev/tty, stdin, stderr, etc.). In addition, some implementations overflow buffers. (CWE-676, CWE-120, CWE-20)",
+            "suggestion": "Make the specific calls to do exactly what you want. If you continue to use it, or write your own, be sure to zero the password as soon as possible to avoid leaving the cleartext password visible in the process' address space",
+            "source": "Various security guidelines and standards",
+            "languages": ["C", "C++"]
+        }
+    ],
+
+    "CERT-C++": [
+        {
+            "name": "DCL50-CPP",
+            "description": "Do not define a C-style variadic function.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "DCL51-CPP",
+            "description": "Do not declare or define a reserved identifier.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "EXP50-CPP",
+            "description": "Do not depend on the order of evaluation for side effects.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "EXP55-CPP",
+            "description": "Do not use an additive operator on enumerators.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "MEM50-CPP",
+            "description": "Allocate and deallocate memory in the same module, at the same level of abstraction.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "MEM51-CPP",
+            "description": "Properly deallocate dynamically allocated resources.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ERR50-CPP",
+            "description": "Handle all exceptions.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ERR51-CPP",
+            "description": "Do not allow exceptions to escape from destructors or deallocation functions.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "STR50-CPP",
+            "functions": ["strcpy", "strcat", "sprintf", "vsprintf"],
+            "description": "Do not use unsafe string functions.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        },
+        {
+            "name": "MEM53-CPP",
+            "functions": ["new", "delete"],
+            "description": "Ensure that destructors are called for allocated objects.",
+            "state": "High (L1)",
+            "source": "CERT C++ Coding Standard",
+            "languages": ["C++"]
+        }
+    ],
+
+    "CERT-Java": [
+        {
+            "name": "MET01-J",
+            "description": "Never use assertions to validate method arguments.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "FIO01-J",
+            "description": "Close resources when they are no longer needed.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "SEC01-J",
+            "description": "Never allow sensitive data to be serialized.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "SEC02-J",
+            "description": "Do not use insecure or weak cryptographic algorithms.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "IDS01-J",
+            "description": "Sanitize untrusted data passed across a trust boundary.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "IDS02-J",
+            "functions": ["executeQuery", "executeUpdate", "execute"],
+            "description": "Prevent SQL injection.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "EXP00-J",
+            "description": "Do not ignore values returned by methods.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "EXP01-J",
+            "description": "Do not use a null in a case where an object is required.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "SEC03-J",
+            "functions": ["equals", "hashCode"],
+            "description": "Override the equals() method consistently with the hashCode() method.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        },
+        {
+            "name": "FIO02-J",
+            "functions": ["FileInputStream", "FileOutputStream", "FileReader", "FileWriter"],
+            "description": "Ensure that file operations are performed in a secure directory.",
+            "state": "High (L1)",
+            "source": "CERT Java Coding Standard",
+            "languages": ["Java"]
+        }
+    ],
+
+    "CERT-Perl": [
+        {
+            "name": "PL00-J",
+            "description": "Avoid using the eval function.",
+            "state": "High (L1)",
+            "source": "CERT Perl Coding Standard",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "PL01-J",
+            "functions": ["system", "exec"],
+            "description": "Sanitize inputs to prevent command injection.",
+            "state": "High (L1)",
+            "source": "CERT Perl Coding Standard",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "PL02-J",
+            "functions": ["Storable::thaw"],
+            "description": "Do not deserialize untrusted data without validation.",
+            "state": "High (L1)",
+            "source": "CERT Perl Coding Standard",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "PL03-J",
+            "functions": ["Dancer::App"],
+            "description": "Use secure server configurations.",
+            "state": "High (L1)",
+            "source": "CERT Perl Coding Standard",
+            "languages": ["Perl"]
+        }
+    ],
+
+    "CERT-Rust": [
+        {
+            "name": "RS00-J",
+            "description": "Avoid using unsafe blocks.",
+            "state": "High (L1)",
+            "source": "CERT Rust Coding Standard",
+            "languages": ["Rust"]
+        },
+        {
+            "name": "RS01-J",
+            "functions": ["std::process::Command"],
+            "description": "Sanitize inputs to prevent command injection.",
+            "state": "High (L1)",
+            "source": "CERT Rust Coding Standard",
+            "languages": ["Rust"]
+        },
+        {
+            "name": "RS02-J",
+            "functions": ["serde_json::from_str"],
+            "description": "Do not deserialize untrusted data without validation.",
+            "state": "High (L1)",
+            "source": "CERT Rust Coding Standard",
+            "languages": ["Rust"]
+        },
+        {
+            "name": "RS03-J",
+            "functions": ["std::net::TcpListener"],
+            "description": "Use secure server configurations.",
+            "state": "High (L1)",
+            "source": "CERT Rust Coding Standard",
+            "languages": ["Rust"]
+        }
+    ],
+
+    "CERT-Go": [
+        {
+            "name": "GO00-J",
+            "description": "Avoid using the unsafe package.",
+            "state": "High (L1)",
+            "source": "CERT Go Coding Standard",
+            "languages": ["Go"]
+        },
+        {
+            "name": "GO01-J",
+            "functions": ["exec.Command"],
+            "description": "Sanitize inputs to prevent command injection.",
+            "state": "High (L1)",
+            "source": "CERT Go Coding Standard",
+            "languages": ["Go"]
+        },
+        {
+            "name": "GO02-J",
+            "functions": ["json.Unmarshal"],
+            "description": "Do not unmarshal untrusted data without validation.",
+            "state": "High (L1)",
+            "source": "CERT Go Coding Standard",
+            "languages": ["Go"]
+        },
+        {
+            "name": "GO03-J",
+            "functions": ["http.ListenAndServe"],
+            "description": "Use secure server configurations.",
+            "state": "High (L1)",
+            "source": "CERT Go Coding Standard",
+            "languages": ["Go"]
+        }
+    ],
+
+    "CERT-Python": [
+        {
+            "name": "PY00-J",
+            "description": "Never use mutable data types for default parameter values.",
+            "state": "High (L1)",
+            "source": "CERT Python Coding Standard",
+            "languages": ["Python"]
+        },
+        {
+            "name": "PY01-J",
+            "functions": ["eval"],
+            "description": "Avoid using the eval() function.",
+            "state": "High (L1)",
+            "source": "CERT Python Coding Standard",
+            "languages": ["Python"]
+        },
+        {
+            "name": "PY02-J",
+            "functions": ["pickle.load", "pickle.loads"],
+            "description": "Do not unpickle untrusted data.",
+            "state": "High (L1)",
+            "source": "CERT Python Coding Standard",
+            "languages": ["Python"]
+        },
+        {
+            "name": "PY03-J",
+            "functions": ["os.system", "os.popen"],
+            "description": "Avoid using insecure functions that execute system commands.",
+            "state": "High (L1)",
+            "source": "CERT Python Coding Standard",
+            "languages": ["Python"]
+        }
+    ],
+
+    "CERT-Ruby": [
+        {
+            "name": "RB00-J",
+            "description": "Avoid using the eval function.",
+            "state": "High (L1)",
+            "source": "CERT Ruby Coding Standard",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "RB01-J",
+            "functions": ["system", "exec"],
+            "description": "Sanitize inputs to prevent command injection.",
+            "state": "High (L1)",
+            "source": "CERT Ruby Coding Standard",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "RB02-J",
+            "functions": ["Marshal.load"],
+            "description": "Do not unserialize untrusted data.",
+            "state": "High (L1)",
+            "source": "CERT Ruby Coding Standard",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "RB03-J",
+            "functions": ["open"],
+            "description": "Use secure file operations.",
+            "state": "High (L1)",
+            "source": "CERT Ruby Coding Standard",
+            "languages": ["Ruby"]
+        }
+    ],
+
+    "CERT-PHP": [
+        {
+            "name": "PH03-J",
+            "functions": ["file_put_contents"],
+            "description": "Use secure file operations.",
+            "state": "High (L1)",
+            "source": "CERT PHP Coding Standard",
+            "languages": ["PHP"]
+        }
+    ],
+
+    "CERT-JavaScript": [
+        {
+            "name": "JS00-J",
+            "description": "Avoid using the eval function.",
+            "state": "High (L1)",
+            "source": "CERT JavaScript Coding Standard",
+            "languages": ["JavaScript"]
+        },
+        {
+            "name": "JS01-J",
+            "functions": ["exec"],
+            "description": "Sanitize inputs to prevent command injection.",
+            "state": "High (L1)",
+            "source": "CERT JavaScript Coding Standard",
+            "languages": ["JavaScript"]
+        },
+        {
+            "name": "JS02-J",
+            "functions": ["JSON.parse"],
+            "description": "Do not parse untrusted data without validation.",
+            "state": "High (L1)",
+            "source": "CERT JavaScript Coding Standard",
+            "languages": ["JavaScript"]
+        },
+        {
+            "name": "JS03-J",
+            "functions": ["require"],
+            "description": "Use secure server configurations.",
+            "state": "High (L1)",
+            "source": "CERT JavaScript Coding Standard",
+            "languages": ["JavaScript"]
+        }
+    ],
+
+    "CERT-SHELL": [
+        {
+            "name": "SH00-J",
+            "description": "Avoid using the eval function.",
+            "state": "High (L1)",
+            "source": "CERT Shell Scripting Standard",
+            "languages": ["Shell"]
+        },
+        {
+            "name": "SH01-J",
+            "functions": ["system", "exec"],
+            "description": "Sanitize inputs to prevent command injection.",
+            "state": "High (L1)",
+            "source": "CERT Shell Scripting Standard",
+            "languages": ["Shell"]
+        },
+        {
+            "name": "SH02-J",
+            "functions": ["sed"],
+            "description": "Do not use sed with untrusted data.",
+            "state": "High (L1)",
+            "source": "CERT Shell Scripting Standard",
+            "languages": ["Shell"]
+        },
+        {
+            "name": "SH03-J",
+            "functions": ["curl"],
+            "description": "Use secure server configurations.",
+            "state": "High (L1)",
+            "source": "CERT Shell Scripting Standard",
+            "languages": ["Shell"]
+        }
+    ],
+
+    "CERT-Ruby": [
+        {
+            "name": "RB00-J",
+            "description": "Avoid using the eval function.",
+            "state": "High (L1)",
+            "source": "CERT Ruby Coding Standard",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "RB01-J",
+            "functions": ["system", "exec"],
+            "description": "Sanitize inputs to prevent command injection.",
+            "state": "High (L1)",
+            "source": "CERT Ruby Coding Standard",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "RB02-J",
+            "functions": ["Marshal.load"],
+            "description": "Do not unserialize untrusted data.",
+            "state": "High (L1)",
+            "source": "CERT Ruby Coding Standard",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "RB03-J",
+            "functions": ["open"],
+            "description": "Use secure file operations.",
+            "state": "High (L1)",
+            "source": "CERT Ruby Coding Standard",
+            "languages": ["Ruby"]
+        }
+    ],
+
+    "CERT-Swift": [
+        {
+            "name": "SW00-J",
+            "description": "Avoid using the eval function.",
+            "state": "High (L1)",
+            "source": "CERT Swift Coding Standard",
+            "languages": ["Swift"]
+        },
+        {
+            "name": "SW01-J",
+            "functions": ["Process"],
+            "description": "Sanitize inputs to prevent command injection.",
+            "state": "High (L1)",
+            "source": "CERT Swift Coding Standard",
+            "languages": ["Swift"]
+        },
+        {
+            "name": "SW02-J",
+            "functions": ["JSONSerialization"],
+            "description": "Do not parse untrusted data without validation.",
+            "state": "High (L1)",
+            "source": "CERT Swift Coding Standard",
+            "languages": ["Swift"]
+        },
+        {
+            "name": "SW03-J",
+            "functions": ["URLSession"],
+            "description": "Use secure server configurations.",
+            "state": "High (L1)",
+            "source": "CERT Swift Coding Standard",
+            "languages": ["Swift"]
+        }
+    ],
+
+    "ISO21434-C": [
+        {
+            "name": "ISO21434-C01",
+            "functions": ["strcpy", "strcat", "sprintf", "vsprintf"],
+            "description": "Avoid using unsafe string functions that can lead to buffer overflows.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C02",
+            "functions": ["scanf", "gets", "fscanf", "sscanf"],
+            "description": "Ensure all external inputs are validated and sanitized to prevent format string attacks and buffer overflows.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C03",
+            "functions": ["crypt", "crypt_r"],
+            "description": "Use cryptographic mechanisms with strong algorithms to protect sensitive data in transit and at rest.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C04",
+            "functions": ["printf", "fprintf", "sprintf", "snprintf"],
+            "description": "Implement secure error handling to avoid leaking sensitive information through error messages.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C05",
+            "functions": ["system", "exec"],
+            "description": "Sanitize inputs to prevent command injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C06",
+            "functions": ["mktemp", "tmpfile"],
+            "description": "Avoid using functions that create temporary files without proper security considerations.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C07",
+            "functions": ["rand", "srand"],
+            "description": "Use cryptographic secure random number generators instead of weak random functions.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C08",
+            "functions": ["memcpy", "memset"],
+            "description": "Ensure that memory manipulation functions are used safely to avoid buffer overflows and information leaks.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C09",
+            "functions": ["fopen", "fopen_s"],
+            "description": "Use secure file handling functions and ensure proper file permissions and access controls.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        },
+        {
+            "name": "ISO21434-C10",
+            "functions": ["getenv"],
+            "description": "Avoid using environment variables for sensitive data due to potential for injection and leakage.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C", "C++"]
+        }
+    ],
+
+    "ISO21434-J": [
+        {
+            "name": "ISO21434-J01",
+            "functions": ["Runtime.getRuntime().exec"],
+            "description": "Sanitize inputs to prevent command injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J02",
+            "functions": ["java.util.Random"],
+            "description": "Use cryptographic secure random number generators instead of weak random functions.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J03",
+            "functions": ["java.io.File"],
+            "description": "Ensure proper file permissions and access controls when handling files.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J04",
+            "functions": ["java.lang.System.getenv"],
+            "description": "Avoid using environment variables for sensitive data due to potential for injection and leakage.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J05",
+            "functions": ["java.net.Socket"],
+            "description": "Use secure communication protocols and ensure proper encryption when transmitting data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J06",
+            "functions": ["java.sql.Statement"],
+            "description": "Use prepared statements to prevent SQL injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J07",
+            "functions": ["java.lang.reflect"],
+            "description": "Avoid using reflection for sensitive operations due to potential for unauthorized access.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J08",
+            "functions": ["java.util.logging"],
+            "description": "Implement secure error handling to avoid leaking sensitive information through error messages.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J09",
+            "functions": ["java.security.MessageDigest"],
+            "description": "Use strong cryptographic hashing algorithms to protect sensitive data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        },
+        {
+            "name": "ISO21434-J10",
+            "functions": ["javax.crypto"],
+            "description": "Ensure proper key management and encryption practices to protect data at rest.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Java"]
+        }
+    ],
+
+    "ISO21434-C++": [
+        {
+            "name": "ISO21434-C++01",
+            "functions": ["strcpy", "strcat", "sprintf", "vsprintf"],
+            "description": "Avoid using unsafe string functions that can lead to buffer overflows.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++02",
+            "functions": ["scanf", "gets", "fscanf", "sscanf"],
+            "description": "Ensure all external inputs are validated and sanitized to prevent format string attacks and buffer overflows.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++03",
+            "functions": ["crypt", "crypt_r"],
+            "description": "Use cryptographic mechanisms with strong algorithms to protect sensitive data in transit and at rest.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++04",
+            "functions": ["printf", "fprintf", "sprintf", "snprintf"],
+            "description": "Implement secure error handling to avoid leaking sensitive information through error messages.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++05",
+            "functions": ["system", "exec"],
+            "description": "Sanitize inputs to prevent command injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++06",
+            "functions": ["mktemp", "tmpfile"],
+            "description": "Avoid using functions that create temporary files without proper security considerations.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++07",
+            "functions": ["rand", "srand"],
+            "description": "Use cryptographic secure random number generators instead of weak random functions.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++08",
+            "functions": ["memcpy", "memset"],
+            "description": "Ensure that memory manipulation functions are used safely to avoid buffer overflows and information leaks.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++09",
+            "functions": ["fopen", "fopen_s"],
+            "description": "Use secure file handling functions and ensure proper file permissions and access controls.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        },
+        {
+            "name": "ISO21434-C++10",
+            "functions": ["getenv"],
+            "description": "Avoid using environment variables for sensitive data due to potential for injection and leakage.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["C++"]
+        }
+    ],
+   
+    "ISO21434-Python": [
+        {
+            "name": "ISO21434-Python01",
+            "functions": ["os.system", "os.popen"],
+            "description": "Sanitize inputs to prevent command injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python02",
+            "functions": ["random.SystemRandom"],
+            "description": "Use cryptographic secure random number generators instead of weak random functions.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python03",
+            "functions": ["open", "os.open"],
+            "description": "Use secure file handling functions and ensure proper file permissions and access controls.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python04",
+            "functions": ["subprocess.Popen"],
+            "description": "Use secure subprocess functions to prevent shell injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python05",
+            "functions": ["pickle.loads"],
+            "description": "Do not unserialize untrusted data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python06",
+            "functions": ["json.loads"],
+            "description": "Do not parse untrusted data without validation.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python07",
+            "functions": ["logging.error"],
+            "description": "Implement secure error handling to avoid leaking sensitive information through error messages.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python08",
+            "functions": ["hashlib.new"],
+            "description": "Use strong cryptographic hashing algorithms to protect sensitive data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python09",
+            "functions": ["hmac.new"],
+            "description": "Use strong cryptographic message authentication codes to protect sensitive data in transit.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        },
+        {
+            "name": "ISO21434-Python10",
+            "functions": ["ssl.wrap_socket"],
+            "description": "Use secure communication protocols and ensure proper encryption when transmitting data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Python"]
+        }
+    ],
+
+    "ISO21434-Ruby": [
+        {
+            "name": "ISO21434-Ruby01",
+            "functions": ["eval"],
+            "description": "Avoid using the eval function.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby02",
+            "functions": ["Process.execute"],
+            "description": "Sanitize inputs to prevent command injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby03",
+            "functions": ["JSON.parse"],
+            "description": "Do not parse untrusted data without validation.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby04",
+            "functions": ["YAML.load"],
+            "description": "Do not parse untrusted data without validation.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby05",
+            "functions": ["open"],
+            "description": "Use secure file handling functions and ensure proper file permissions and access controls.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby06",
+            "functions": ["Net::HTTP.get_response"],
+            "description": "Use secure communication protocols and ensure proper encryption when transmitting data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby07",
+            "functions": ["Digest::MD5.hexdigest"],
+            "description": "Use strong cryptographic hashing algorithms to protect sensitive data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby08",
+            "functions": ["Digest::SHA256.hexdigest"],
+            "description": "Use strong cryptographic hashing algorithms to protect sensitive data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby09",
+            "functions": ["SecureRandom.hex"],
+            "description": "Use cryptographic secure random number generators instead of weak random functions.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        },
+        {
+            "name": "ISO21434-Ruby10",
+            "functions": ["ENV.[]"],
+            "description": "Avoid using environment variables for sensitive data due to potential for injection and leakage.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Ruby"]
+        }
+    ],
+
+    "ISO21434-PHP": [
+        {
+            "name": "ISO21434-PHP01",
+            "functions": ["exec", "shell_exec"],
+            "description": "Sanitize inputs to prevent command injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP02",
+            "functions": ["rand", "srand"],
+            "description": "Use cryptographic secure random number generators instead of weak random functions.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP03",            
+            "functions": ["file_get_contents", "file"],
+            "description": "Use secure file handling functions and ensure proper file permissions and access controls.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP04",
+            "functions": ["mysqli_query"],
+            "description": "Use prepared statements and parameterized queries to prevent SQL injection attacks.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP05",
+            "functions": ["mysqli_real_escape_string"],
+            "description": "Use prepared statements and parameterized queries to prevent SQL injection attacks.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP06",
+            "functions": ["mysqli_fetch_assoc"],
+            "description": "Validate and sanitize data retrieved from databases to prevent SQL injection attacks.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP07",
+            "functions": ["mysqli_real_query"],
+            "description": "Use prepared statements and parameterized queries to prevent SQL injection attacks.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP08",
+            "functions": ["mysqli_insert_id"],
+            "description": "Validate and sanitize data retrieved from databases to prevent SQL injection attacks.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP09",
+            "functions": ["mysqli_affected_rows"],
+            "description": "Validate and sanitize data retrieved from databases to prevent SQL injection attacks.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        },
+        {
+            "name": "ISO21434-PHP10",
+            "functions": ["mysqli_connect"],
+            "description": "Use secure communication protocols and ensure proper encryption when transmitting data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["PHP"]
+        }
+    ],
+
+    "ISO21434-Perl": [
+        {
+            "name": "ISO21434-Perl01",
+            "functions": ["system", "exec"],
+            "description": "Sanitize inputs to prevent command injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl02",
+            "functions": ["open", "opendir"],
+            "description": "Use secure file handling functions and ensure proper file permissions and access controls.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl03",
+            "functions": ["fork", "system"],
+            "description": "Use secure subprocess functions to prevent shell injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl04",
+            "functions": ["eval"],
+            "description": "Avoid using the eval function.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl05",
+            "functions": ["crypt"],
+            "description": "Use cryptographic mechanisms with strong algorithms to protect sensitive data in transit and at rest.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl06",
+            "functions": ["chroot"],
+            "description": "Use secure file handling functions and ensure proper file permissions and access controls.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl07",
+            "functions": ["socket"],
+            "description": "Use secure communication protocols and ensure proper encryption when transmitting data.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl08",
+            "functions": ["fork", "system"],
+            "description": "Use secure subprocess functions to prevent shell injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl09",
+            "functions": ["fork", "system"],
+            "description": "Use secure subprocess functions to prevent shell injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        },
+        {
+            "name": "ISO21434-Perl10",
+            "functions": ["fork", "system"],
+            "description": "Use secure subprocess functions to prevent shell injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 21434 Cybersecurity Engineering",
+            "languages": ["Perl"]
+        }
+    ],
+    
+    
+    "ISO26262": [
+        {
+            "name": "ISO26262-01",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "description": "Implement secure coding practices to prevent common vulnerabilities such as injection attacks and buffer overflows.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-02",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "description": "Ensure all external inputs are validated and sanitized to prevent unauthorized access or data manipulation.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-03",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "description": "Use cryptographic mechanisms to protect sensitive data in transit and at rest.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-04",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "description": "Implement secure error handling to avoid leaking sensitive information through error messages.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-05",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "description": "Sanitize inputs to prevent command injection vulnerabilities.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-06",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "functions": ["mktemp", "tmpfile"],
+            "description": "Avoid using functions that create temporary files without proper security considerations.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-07",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "functions": ["rand", "srand"],
+            "description": "Use cryptographic secure random number generators instead of weak random functions.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-08",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "functions": ["memcpy", "memset"],
+            "description": "Ensure that memory manipulation functions are used safely to avoid buffer overflows and information leaks.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-09",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "functions": ["fopen", "fopen_s"],
+            "description": "Use secure file handling functions and ensure proper file permissions and access controls.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        },
+        {
+            "name": "ISO26262-10",
+            "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+            "functions": ["getenv"],
+            "description": "Avoid using environment variables for sensitive data due to potential for injection and leakage.",
+            "state": "High (L1)",
+            "source": "ISO 26262 Functional Safety"
+        }
+    ],
+    
+    "NIST_SP_800-53": [
+        {
+        "name": "AC-2 (Account Management)",
+        "state": "Required",
+        "description": "The organization manages information system accounts by establishing, modifying, disabling, and removing accounts.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "NIST Special Publication 800-53"
+        },
+        {
+        "name": "SC-28 (Protection of Information at Rest)",
+        "state": "Required",
+        "description": "The information at rest is protected against unauthorized access and disclosure through cryptographic mechanisms.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "NIST Special Publication 800-53"
+        },
+        {
+        "name": "SI-4 (Information System Monitoring)",
+        "state": "Required",
+        "description": "The organization monitors the information system to detect attacks and indicators of potential attacks.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "NIST Special Publication 800-53"
+        }
+    ],
+    "PCI_DSS": [
+        {
+        "name": "Requirement 1: Install and maintain a firewall configuration to protect cardholder data",
+        "state": "Required",
+        "description": "A firewall is installed and configured to protect cardholder data.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "PCI Data Security Standard (PCI DSS)"
+        },
+        {
+        "name": "Requirement 3: Protect stored cardholder data",
+        "state": "Required",
+        "description": "Cardholder data is protected when stored using strong cryptography.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "PCI Data Security Standard (PCI DSS)"
+        },
+        {
+        "name": "Requirement 6: Develop and maintain secure systems and applications",
+        "state": "Required",
+        "description": "Secure systems and applications are developed and maintained to prevent security vulnerabilities.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "PCI Data Security Standard (PCI DSS)"
+        }
+    ],
+    "HIPAA": [
+        {
+        "name": "Privacy Rule",
+        "state": "Required",
+        "description": "The Privacy Rule protects the privacy of individually identifiable health information.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "Health Insurance Portability and Accountability Act (HIPAA)"
+        },
+        {
+        "name": "Security Rule",
+        "state": "Required",
+        "description": "The Security Rule establishes national standards to protect individuals’ electronic personal health information.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "Health Insurance Portability and Accountability Act (HIPAA)"
+        }
+    ],
+    "GDPR": [
+        {
+        "name": "Principle of Lawfulness, Fairness, and Transparency",
+        "state": "Required",
+        "description": "Personal data shall be processed lawfully, fairly, and in a transparent manner.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "General Data Protection Regulation (GDPR)"
+        },
+        {
+        "name": "Principle of Data Minimization",
+        "state": "Required",
+        "description": "Personal data shall be adequate, relevant, and limited to what is necessary in relation to the purposes for which they are processed.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "General Data Protection Regulation (GDPR)"
+        }
+    ],
+    "MITRE_ATT&CK": [
+        {
+        "name": "Initial Access",
+        "state": "Required",
+        "description": "Defenses against techniques that adversaries may use to gain an initial foothold within a network.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "MITRE ATT&CK"
+        },
+        {
+        "name": "Execution",
+        "state": "Required",
+        "description": "Defenses against techniques that adversaries may use to execute malicious code on a system.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "MITRE ATT&CK"
+        }
+    ],
+    "CIS_Controls": [
+        {
+        "name": "Inventory and Control of Hardware Assets",
+        "state": "Required",
+        "description": "Track all hardware assets to prevent unauthorized devices from connecting to the network.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "Center for Internet Security (CIS) Controls"
+        },
+        {
+        "name": "Inventory and Control of Software Assets",
+        "state": "Required",
+        "description": "Track all software assets to prevent unauthorized or malicious software from being installed.",
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "Center for Internet Security (CIS) Controls"
+        }
+    ],
+    
+    "OWASP_Top_10": [
+        {
+        "name": "A01:2021 - Broken Access Control",
+        "state": "Prohibited",
+        "description": "Avoid using functions that allow unauthorized access to sensitive data or functionality.",
+        "functions": ["bypass_access_control", "unauthorized_access"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A02:2021 - Cryptographic Failures",
+        "state": "Prohibited",
+        "description": "Avoid using functions that handle sensitive data without proper encryption.",
+        "functions": ["store_data_unencrypted", "transmit_data_unencrypted"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A03:2021 - Injection",
+        "state": "Prohibited",
+        "description": "Avoid using functions that allow injection attacks, such as SQL injection or OS command injection.",
+        "functions": ["execute_sql", "execute_os_command"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A04:2021 - Insecure Design",
+        "state": "Prohibited",
+        "description": "Avoid using functions that are part of insecure design patterns or architectures.",
+        "functions": ["insecure_design_pattern"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A05:2021 - Security Misconfiguration",
+        "state": "Prohibited",
+        "description": "Avoid using functions that result in security misconfigurations, such as default passwords or unnecessary services.",
+        "functions": ["use_default_password", "enable_unnecessary_service"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A06:2021 - Vulnerable and Outdated Components",
+        "state": "Prohibited",
+        "description": "Avoid using functions that rely on vulnerable or outdated components.",
+        "functions": ["use_vulnerable_component"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A07:2021 - Identification and Authentication Failures",
+        "state": "Prohibited",
+        "description": "Avoid using functions that result in weak or broken authentication mechanisms.",
+        "functions": ["weak_authentication", "broken_authentication"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A08:2021 - Software and Data Integrity Failures",
+        "state": "Prohibited",
+        "description": "Avoid using functions that do not validate software or data integrity.",
+        "functions": ["unvalidated_software", "unvalidated_data"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A09:2021 - Security Logging and Monitoring Failures",
+        "state": "Prohibited",
+        "description": "Avoid using functions that result in inadequate logging or monitoring.",
+        "functions": ["inadequate_logging", "inadequate_monitoring"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        },
+        {
+        "name": "A10:2021 - Server-Side Request Forgery (SSRF)",
+        "state": "Prohibited",
+        "description": "Avoid using functions that allow server-side request forgery attacks.",
+        "functions": ["ssrf_vulnerability"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "OWASP Top 10 2021"
+        }
+    ],
+
+    "CWE_Top_25": [
+        {
+        "name": "CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer",
+        "state": "Prohibited",
+        "description": "Avoid using functions that perform operations on a memory buffer without proper bounds checking.",
+        "functions": ["buffer_overflow", "out_of_bounds_read", "out_of_bounds_write"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "CWE Top 25"
+        },
+        {
+        "name": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "state": "Prohibited",
+        "description": "Avoid using functions that allow unescaped input to be included in web pages, leading to XSS attacks.",
+        "functions": ["render_template", "echo", "innerHTML"],
+        "languages": ["JavaScript", "Python", "Ruby", "PHP", "Java", "C#"],
+        "source": "CWE Top 25"
+        },
+        {
+        "name": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+        "state": "Prohibited",
+        "description": "Avoid using functions that allow unfiltered input to be used in SQL queries, leading to SQL injection attacks.",
+        "functions": ["executeQuery", "mysql_query", "sqlite3_exec"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "CWE Top 25"
+        }
+    ],
+    "SANS_Top_25": [
+        {
+        "name": "SANS Top 25 - Risky Resource Management",
+        "state": "Prohibited",
+        "description": "Avoid using functions that manage resources without proper error handling or cleanup.",
+        "functions": ["malloc", "free", "new", "delete"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "SANS Top 25"
+        },
+        {
+        "name": "SANS Top 25 - Porous Defenses",
+        "state": "Prohibited",
+        "description": "Avoid using functions that expose sensitive information or bypass security controls.",
+        "functions": ["getenv", "setuid", "setgid"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "SANS Top 25"
+        },
+        {
+        "name": "SANS Top 25 - Insecure Interaction Between Components",
+        "state": "Prohibited",
+        "description": "Avoid using functions that allow insecure communication or interaction between components.",
+        "functions": ["eval", "system", "exec"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "SANS Top 25"
+        }
+    ],
+    "NIST_SP_800-171": [
+        {
+        "name": "NIST SP 800-171 - Controlled Unclassified Information (CUI)",
+        "state": "Required",
+        "description": "Ensure that all controlled unclassified information is protected according to NIST standards.",
+        "functions": ["encrypt_data", "authenticate_user", "audit_log"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "NIST SP 800-171"
+        },
+        {
+        "name": "NIST SP 800-171 - Access Control",
+        "state": "Required",
+        "description": "Implement access control mechanisms to restrict access to systems and data.",
+        "functions": ["access_control", "role_based_access", "attribute_based_access"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "NIST SP 800-171"
+        },
+        {
+        "name": "NIST SP 800-171 - Audit and Accountability",
+        "state": "Required",
+        "description": "Ensure that all security-relevant events are logged and audited.",
+        "functions": ["log_event", "audit_trail", "monitor_activity"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "NIST SP 800-171"
+        }
+    ],
+    "ISO_27002": [
+        {
+        "name": "ISO/IEC 27002 - Information Security Policies",
+        "state": "Required",
+        "description": "Establish and maintain information security policies to protect organizational assets.",
+        "functions": ["policy_enforcement", "compliance_monitoring", "risk_assessment"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "ISO/IEC 27002"
+        },
+        {
+        "name": "ISO/IEC 27002 - Access Control",
+        "state": "Required",
+        "description": "Implement access control mechanisms to ensure that only authorized individuals have access to information and resources.",
+        "functions": ["access_control", "identity_management", "authentication"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "ISO/IEC 27002"
+        },
+        {
+        "name": "ISO/IEC 27002 - Cryptography",
+        "state": "Required",
+        "description": "Use cryptographic techniques to protect the confidentiality, integrity, and authenticity of data.",
+        "functions": ["encrypt_data", "decrypt_data", "hash_data"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "ISO/IEC 27002"
+        }
+    ],
+    
+    "NIST_SP_800-172": [
+        {
+        "name": "NIST SP 800-172 - Enhanced Security Requirements for Protecting Controlled Unclassified Information",
+        "state": "Required",
+        "description": "Implement enhanced security measures to protect controlled unclassified information.",
+        "functions": ["multi_factor_authentication", "data_encryption", "access_control"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "NIST SP 800-172"
+        },
+        {
+        "name": "NIST SP 800-172 - Audit and Accountability",
+        "state": "Required",
+        "description": "Ensure that all security-relevant events are logged and audited with enhanced logging requirements.",
+        "functions": ["enhanced_logging", "audit_trail", "monitor_activity"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "NIST SP 800-172"
+        }
+    ],
+    "ISO_27017": [
+        {
+        "name": "ISO/IEC 27017 - Code of Practice for Information Security Controls Based on ISO/IEC 27002 for Cloud Services",
+        "state": "Required",
+        "description": "Implement information security controls specifically for cloud services based on ISO/IEC 27002.",
+        "functions": ["cloud_security", "data_encryption_cloud", "access_control_cloud"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "ISO/IEC 27017"
+        },
+        {
+        "name": "ISO/IEC 27017 - Cloud Service Provider Security",
+        "state": "Required",
+        "description": "Ensure that cloud service providers implement appropriate security measures.",
+        "functions": ["provider_security_audit", "cloud_data_protection", "cloud_access_control"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "ISO/IEC 27017"
+        }
+    ],
+    "ISO_27018": [
+        {
+        "name": "ISO/IEC 27018 - Code of Practice for Protection of Personally Identifiable Information (PII) in Public Clouds Acting as PII Processors",
+        "state": "Required",
+        "description": "Implement controls to protect personally identifiable information (PII) in public cloud environments.",
+        "functions": ["PII_protection", "data_anonymization", "PII_access_control"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "ISO/IEC 27018"
+        },
+        {
+        "name": "ISO/IEC 27018 - PII Breach Notification",
+        "state": "Required",
+        "description": "Ensure that appropriate breach notification procedures are in place for PII.",
+        "functions": ["breach_detection", "breach_notification", "PII_breach_response"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "ISO/IEC 27018"
+        }
+    ],
+    "PCI_DSS_3.2.1": [
+        {
+        "name": "PCI DSS 3.2.1 - Requirement 8: Identify and Authenticate Access to System Components",
+        "state": "Required",
+        "description": "Implement strong identification and authentication mechanisms for accessing system components.",
+        "functions": ["strong_authentication", "access_control_policies", "user_identification"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "PCI DSS 3.2.1"
+        },
+        {
+        "name": "PCI DSS 3.2.1 - Requirement 10: Track and Monitor All Access to Network Resources and Cardholder Data",
+        "state": "Required",
+        "description": "Implement logging and monitoring to track and monitor all access to network resources and cardholder data.",
+        "functions": ["logging", "monitoring", "audit_trails"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "PCI DSS 3.2.1"
+        }
+    ],
+    "HIPAA_Security_Rule": [
+        {
+        "name": "HIPAA Security Rule - Administrative Safeguards",
+        "state": "Required",
+        "description": "Implement administrative safeguards as specified in the HIPAA Security Rule.",
+        "functions": ["security_management_process", "security_awareness_training", "risk_analysis"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "HIPAA Security Rule"
+        },
+        {
+        "name": "HIPAA Security Rule - Technical Safeguards",
+        "state": "Required",
+        "description": "Implement technical safeguards as specified in the HIPAA Security Rule.",
+        "functions": ["access_controls", "audit_controls", "data_integrity"],
+        "languages": ["C", "C++", "Java", "Python", "JavaScript", "C#", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Perl", "Shell"],
+        "source": "HIPAA Security Rule"
+        }
+    ]
+}
+    
+    
+    
+    
+

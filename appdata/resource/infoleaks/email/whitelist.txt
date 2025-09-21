@@ -1,0 +1,6 @@
+@huawei.com$
+^support@huawei.com$
+^sales@huawei.com$
+
+^support@chime-lab.cn$
+^sales@chime-lab.cn$

@@ -1,0 +1,19 @@
+"""
+Take everyone elses votes. If a vote is for something popular, vote for it in popularity
+rank
+"""
+from typing import List, Set
+
+from .known_languages import POPULARITY_LIST
+
+
+def language_by_popularity(guesses: Set[str]) -> List[str]:
+    """Guess by parsing"""
+    # TODO: maybe take into account ranking, use cutoffs.
+    if not guesses:
+        return []
+    votes = []
+    for guess in guesses:
+        if guess in POPULARITY_LIST:
+            votes.append(guess)
+    return votes

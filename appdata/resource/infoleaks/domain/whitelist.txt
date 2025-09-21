@@ -1,0 +1,13 @@
+.java$
+.so$
+.exe$
+.cc$
+.pid$
+.ro$
+.rw$
+.sh$
+.in$
+.io$
+.cfg$
+.config$
+.dat$

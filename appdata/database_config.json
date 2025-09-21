@@ -1,0 +1,45 @@
+{
+  "mongo":  {    
+    "default": {
+      "host": "mongo",
+      "port": 27017,
+      "username" : "chime",
+      "password" : "09b909e7cd6a8cd8327368a9df348a82",
+      "auth_database" : "admin",
+      "auth_mechanism" : "SCRAM-SHA-1",
+      "enc" : false
+    },
+
+    "_mapping": {
+      "sbom": "sbom2",
+      "master": "master",
+      "findings": "findings",
+      "cache": "cache",
+      "compliance": "compliance",
+      "vuln": "vuln",
+      "om": "redis"
+    }
+  },
+
+  "redis": {
+    "default": {
+      "host": "redis",
+      "port": 6379,
+      "db": 0,
+      "password" : "09b909e7cd6a8cd8327368a9df348a82",
+      "disable": false
+    }
+  },
+
+  "mirror": {
+    "dts1": {
+      "host": "dts1.chime-lab.cn",
+      "port": 27017,
+      "username" : "chime",
+      "password" : "09b909e7cd6a8cd8327368a9df348a82",
+      "auth_database" : "admin",
+      "auth_mechanism" : "SCRAM-SHA-1",
+      "enc" : false
+    }
+  }
+}

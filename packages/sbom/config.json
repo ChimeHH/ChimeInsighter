@@ -1,0 +1,43 @@
+{    
+    "alpha": 3,
+    "precision": 0.6,
+    "use_high_version": true,
+    "minimum_score": 200,
+
+    "oss_percent_n": 1.2,
+    "oss_percent_factor": 0.6,
+
+    "criterias": [
+        {
+            "components": ["linux", "wireshark", "cygwin", "python2", "python3", "glib"],
+            
+            "real_score_minimum": 0.3,
+            "scale_percent_minimum": 0.3,
+            "scale_percent_threshold": 0.4,
+            "clone_percent_threshold": 0.6,
+            "file_tokens_percent_threshold": 0.3,
+
+            "thresholds": [
+                {"s": 0.4},
+                {"s": 0.3, "n": 0.5},
+                {"s": 0.3, "c": 0.5 }
+            ]
+        },
+
+        {        
+            "real_score_minimum": 0.1,
+            "scale_percent_minimum": 0.05,
+            "scale_percent_threshold": 0.2,
+            "clone_percent_threshold": 0.7,
+            "file_tokens_percent_threshold": 0.10,        
+
+            "thresholds": [
+                {"s": 0.4},
+                {"c": 0.4},
+                {"n": 0.5},
+                {"s": 0.3, "n": 0.5},
+                {"s": 0.3, "c": 0.5 }
+            ]
+        }
+    ]
+}
