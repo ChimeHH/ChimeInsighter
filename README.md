@@ -105,6 +105,9 @@ To avoid AGPL "infecting" your code:
 > **SaaS Deployment Warning**: Even with CLI isolation, SaaS/cloud deployment remains legally high-risk under AGPL.  
 > → Avoid cloud deployment, or replace BANG with a permissively licensed alternative.
 
+Update:
+According to the latest udpate, BANG was updated to GPL-3.0, and you may safely deploy Insighter in SaaS or cloud environments without triggering GPL’s source distribution requirement — as long as you do not distribute modified binaries of BANG itself. We only distribute source code of BANG.
+
 ---
 
 ## Cloud / Cluster Deployment Guide
