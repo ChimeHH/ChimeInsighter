@@ -298,7 +298,7 @@
                 }
             ],
             
-            "zeroday": [
+            "//zeroday": [
                 {
                     "index": 0,
                     "max_kbytes": 512,
