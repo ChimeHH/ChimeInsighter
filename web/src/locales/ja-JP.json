@@ -1,0 +1,15 @@
+{
+  "menu.zh": "中国語",
+  "menu.en": "英語",
+  "menu.de": "ドイツ語",
+  "menu.fr": "フランス語",
+  "menu.ja": "日本語",
+  "menu.ru": "ロシア語",
+  "menu.ko": "韓国語",
+  "menu.zh-tw": "繁体中国語",
+  "menu.language": "言語",
+  "menu.logout": "ログアウト",
+  "menu.changePWD": "パスワードを変更",
+  "menu.message.languageSwitched": "言語が{language}に変更されました",
+  "menu.message.passwordChanged": "パスワードが変更されました"
+}

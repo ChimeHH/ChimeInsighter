@@ -1,0 +1,80 @@
+// https://umijs.org/config/
+import { defineConfig } from 'umi';
+import { join } from 'path';
+import defaultSettings from './defaultSettings';
+import proxy from './proxy';
+import routes from './routes';
+const { REACT_APP_ENV } = process.env;
+export default defineConfig({
+  hash: true,
+  antd: {},
+  dva: {
+    hmr: true,
+  },
+  layout: {
+    // https://umijs.org/zh-CN/plugins/plugin-layout
+    locale: true,
+    siderWidth: 208,
+    ...defaultSettings,
+  },
+  dynamicImport: {
+    loading: '@ant-design/pro-layout/es/PageLoading',
+  },
+  targets: {
+    ie: 11,
+  },
+  // umi routes: https://umijs.org/docs/routing
+  routes,
+  access: {},
+  // Theme for antd: https://ant.design/docs/react/customize-theme-cn
+  theme: {
+    // 如果不想要 configProvide 动态设置主题需要把这个设置为 default
+    // 只有设置为 variable， 才能使用 configProvide 动态设置主色调
+    // https://ant.design/docs/react/customize-theme-variable-cn
+    'root-entry-name': 'variable',
+  },
+  // esbuild is father build tools
+  // https://umijs.org/plugins/plugin-esbuild
+  esbuild: {},
+  title: false,
+  ignoreMomentLocale: true,
+  proxy: proxy[REACT_APP_ENV || 'dev'],
+  manifest: {
+    basePath: '/',
+  },
+  // base: '/web/',
+  // publicPath: process.env.NODE_ENV === 'production' ? '/web/' : '/',
+  // Fast Refresh 热更新
+  fastRefresh: {},
+  openAPI: [
+    {
+      requestLibPath: "import { request } from 'umi'",
+      // 或者使用在线的版本
+      // schemaPath: "https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json"
+      schemaPath: join(__dirname, 'oneapi.json'),
+      mock: false,
+    },
+    {
+      requestLibPath: "import { request } from 'umi'",
+      schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/CA1dOm%2631B/openapi.json',
+      projectName: 'swagger',
+    },
+  ],
+  nodeModulesTransform: {
+    type: 'none',
+  },
+  mfsu: {},
+  webpack5: {},
+  exportStatic: {},
+  //自定义环境变量
+  define: {
+    WEB_IMAGE_SRC: '/images/iot-tmws01/api/', //图片路径
+    RICH_IMAGE_SRC: '/images/iot-tmws01/rich-text/', //富文本图片路径
+    FILE_SRC: '/files/iot-tmws01/api/', //文件路径
+  },
+  locale: {
+    default: 'en-US', //默认语言，如果本地没有设置语言，则使用默认语言;注释掉默认语言，使用浏览器语言
+    antd: true,
+    baseNavigator: true,
+  },
+});

@@ -1,0 +1,15 @@
+{
+  "menu.zh": "中文",
+  "menu.en": "英文",
+  "menu.de": "德文",
+  "menu.fr": "法文",
+  "menu.ja": "日文",
+  "menu.ru": "俄文",
+  "menu.ko": "韩文",
+  "menu.zh-tw": "繁體中文",
+  "menu.language": "语言",
+  "menu.logout": "退出登录",
+  "menu.changePWD": "修改密码",
+  "menu.message.languageSwitched": "语言已切换为 {language}",
+  "menu.message.passwordChanged": "密码已修改"
+}

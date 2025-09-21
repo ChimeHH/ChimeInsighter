@@ -1,0 +1,14 @@
+/* style.css */  
+.ant-table-tbody > tr > td {  
+    padding: 0; /* 移除内部填充 */  
+    height: 20px; /* 设置行高度 */  
+    line-height: 20px; /* 设置行内文本的高度，确保它与行高度匹配 */  
+    vertical-align: middle; /* 垂直居中对齐 */  
+}  
+
+/* 如果需要，更改所有单元格的默认字体样式 */  
+.ant-table-tbody > tr > td,   
+.ant-table-tbody > tr > th {  
+    margin: 0; /* 移除默认的外边距 */  
+    line-height: 20px; /* 设置文本的行高 */  
+} 

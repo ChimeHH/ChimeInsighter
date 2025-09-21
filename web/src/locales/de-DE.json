@@ -1,0 +1,15 @@
+{
+  "menu.zh": "Chinesisch",
+  "menu.en": "Englisch",
+  "menu.de": "Deutsch",
+  "menu.fr": "Französisch",
+  "menu.ja": "Japanisch",
+  "menu.ru": "Russisch",
+  "menu.ko": "Koreanisch",
+  "menu.zh-tw": "Traditionelles Chinesisch",
+  "menu.language": "Sprache",
+  "menu.logout": "Abmelden",
+  "menu.changePWD": "Passwort ändern",
+  "menu.message.languageSwitched": "Sprache wurde auf {language} geändert",
+  "menu.message.passwordChanged": "Passwort wurde geändert"
+}
